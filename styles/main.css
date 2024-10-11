@@ -752,10 +752,14 @@ input[type="email"] {
 .footer {
    background-color: #f0f0f0;
    padding: 30px 0;
-   color: #333;
-   font-family: Arial, sans-serif;
+   color: var(--dark);
 }
 .footer-top {
    display: flex;
-   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+}
+.footer-bottom {
+   display: flex;
 }
