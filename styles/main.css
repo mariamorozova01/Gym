@@ -83,7 +83,7 @@ nav a {
     flex-basis: 60%;
  }
  .hero-text h1 {
-    font-size: clamp(26px, 4.5vw ,48px);
+    font-size: clamp(1.563rem, 0.899rem + 2.95vw, 3rem);
     color: var(--dark);
     line-height: 125%;
     margin: 0 0 40px 0;
@@ -94,14 +94,14 @@ nav a {
     color: var(--dark);
  }
  .trainings span {
-    font-size: clamp(26px, 3vw, 40px);
+    font-size: clamp(1.625rem, 0.99rem + 2.82vw, 3rem);
 
  }
  .trainings-number {
     margin-right: 16px;
  }
  .hero-subtext {
-    font-size: clamp(18px, 3vw, 16px);
+    font-size: clamp(1rem, 0.942rem + 0.26vw, 1.125rem);
     color: var(--dark);
     margin: 0px;
     margin-left: 93px;
@@ -112,10 +112,12 @@ nav a {
 .hero-button {
     background: var(--accent);
     border: none;
-    padding: 20px 30px 20px 30px;    
+    height: 65px;
+    width: 252px;
     color: var(--dark);
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 16px;
     line-height: 150%;
     letter-spacing: 3%;
     cursor: pointer;
@@ -173,7 +175,7 @@ nav a {
    flex-direction: row;
 }
 .schedule-title h2 {
-   font-size: clamp(26px, 5vw, 40px);
+   font-size: clamp(1.625rem, 1.221rem + 1.79vw, 2.5rem);
    font-weight: 700;
    color: var(--dark);
    margin: 0;
@@ -184,7 +186,7 @@ nav a {
 
 }
 .schedule-title p {
-   font-size: clamp(16px, 4vw, 28px);
+   font-size: clamp(1rem, 0.654rem + 1.54vw, 1.75rem);
    font-weight: 700;
    line-height: 120%;
    color: var(--dark);
@@ -219,7 +221,7 @@ nav a {
    opacity: 0.7;
 }
 .item .date {
-   font-size: 18px;
+   font-size: clamp(0.875rem, 0.76rem + 0.51vw, 1.125rem);
    line-height: 125%;
    text-align: right;
    color: #010101;
@@ -227,7 +229,7 @@ nav a {
 }
 .item .training-title {
    margin: 40px 0 0 0;
-   font-size: 18px;
+   font-size: clamp(0.875rem, 0.76rem + 0.51vw, 1.125rem);
    font-weight: 600;
    color: var(--dark);
 }
@@ -318,7 +320,7 @@ nav a {
    max-width: 620px;
    margin: 0 auto;
    color: var(--dark);
-   font-size: 40px;
+   font-size: clamp(1.625rem, 1.221rem + 1.79vw, 2.5rem);
    font-weight: 700;
    padding-bottom: 40px;
    position: relative;
@@ -356,14 +358,15 @@ input[type="email"]:invalid {
    border-color: #AE0303; 
 }
 .form button {
-   flex-basis: 225px;
    height: 65px;
+   width: 225px;
    background: var(--accent);
    border: none;
    color: var(--dark);
    font-weight: 700;
    text-transform: uppercase;
    line-height: 150%;
+   font-size: 16px;
    letter-spacing: 3%;
    cursor: pointer;
    box-shadow: 0 4px 10px rgba(251, 241, 56, 0.4);
@@ -461,7 +464,6 @@ label a {
       gap: 15px;
    }
    .form-header h3 {
-      font-size: 26px; 
       padding-bottom: 38x; 
       margin: 0;
       text-align: center;
@@ -662,3 +664,98 @@ input[type="email"] {
 }
 
 */
+
+/*About*/
+.about-section {
+   display: flex;
+   gap: 77px;
+   margin-bottom: 80px;
+}
+.about-text {
+   flex-basis: 45%;
+}
+.about-image {
+   flex-basis: 55%;
+}
+.about-text h2 {
+   font-size: clamp(1.625rem, 1.221rem + 1.79vw, 2.5rem);
+   margin-bottom: 19px;
+   color: var(--dark);
+   line-height: 125%;
+}
+
+.about-text p {
+   font-size: clamp(1rem, 0.942rem + 0.26vw, 1.125rem);
+   margin-bottom: 34px;
+   color: var(--dark);
+   line-height: 150%;
+}
+.about-image img {
+   width: 100%;
+}
+.about-text .signup-button {
+   height: 65px;
+   width: 225px;
+   background: var(--accent);
+   border: none;
+   color: var(--dark);
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 16px;
+   line-height: 150%;
+   letter-spacing: 3%;
+   cursor: pointer;
+   box-shadow: 0 4px 10px rgba(251, 241, 56, 0.4);
+   transition: .3s;
+}
+.about-text .signup-button:hover {
+   color: var(--accent);
+   box-shadow: 0rem 0.81rem 1.5rem 0rem rgba(70, 86, 106, 0.2);
+   background: rgb(43, 53, 65);
+}
+.features {
+   display: grid;
+   grid-template-columns: repeat(4, auto);
+   grid-template-rows: auto;
+   gap: 67px;
+}
+.feature h3 {
+   font-size: 18px;
+   margin-bottom: 20px;
+   color: var(--dark);
+   line-height: 125%;
+}
+
+.feature p {
+   font-size: clamp(1rem, 0.942rem + 0.26vw, 1.125rem);
+   color: var(--dark);
+   line-height: 150%;
+}
+
+@media (max-width: 768px) {
+   .about-image img {
+   }
+   .features {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: auto;
+      gap: 43px 0;
+   }
+}
+@media (max-width: 430px) {
+   .features {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: auto;
+      gap: 40px 0
+}
+
+/*Footer*/
+.footer {
+   background-color: #f0f0f0;
+   padding: 30px 0;
+   color: #333;
+   font-family: Arial, sans-serif;
+}
+.footer-top {
+   display: flex;
+   flex-direction: row;
+}
