@@ -32,10 +32,10 @@ header {
     justify-content: space-between; 
     align-items: center;
     margin: 0 auto;
-    
 }
 .logo img {
     max-height: 30px;
+    max-width: 97px;
 }
 nav ul {
     list-style: none; 
@@ -47,8 +47,23 @@ nav ul {
 nav a {
     color: var(--dark);
     line-height: 150%;
+    position: relative;
+}
+nav a::after {
+   content: '';
+   display: block;
+   width: 0;
+   height: 1px;
+   background-color: var(--dark);
+   transition: width 0.3s;
+   position: absolute;
+   transform: translateY(9px);
+}
+nav a:hover::after {
+   width: 100%;
 }
 .email-link {
+   font-size: clamp(0.875rem, 0.822rem + 0.25vw, 1rem);
     color: var(--dark);
     transition: 0.2s;
     font-weight: 700;
@@ -70,6 +85,32 @@ nav a {
     box-shadow: 0px 13px 24px 0px rgba(251, 241, 56, 0.3);
     z-index: -1;
 }
+.burger-menu {
+   display: none;
+   width: 29px;
+   height: 22px;
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+@media (max-width: 768px) {
+   .burger-menu {
+       display: block;
+   }
+   .logo img {
+      width: 97px;
+   }
+
+   nav {
+       display: none;
+   }
+}
+@media (max-width: 340px) {
+   .logo img {
+      width: 78px;
+   }
+}
+
 
 /*Hero Banner*/
 .hero {
@@ -77,16 +118,17 @@ nav a {
     align-items: center;
     gap: 20px;
     position: relative;
-    margin-bottom: 158px;
+    margin-bottom: clamp(4.75rem, 2.572rem + 10.25vw, 9.875rem);
  }
  .hero-text {
     flex-basis: 60%;
  }
  .hero-text h1 {
-    font-size: clamp(1.563rem, 0.899rem + 2.95vw, 3rem);
+    font-size: clamp(25px, 3vw, 48px);
     color: var(--dark);
     line-height: 125%;
     margin: 0 0 40px 0;
+    text-transform: uppercase;
  }
  .trainings {
     margin: 0 0 20px 0;
@@ -129,7 +171,6 @@ nav a {
    box-shadow: 0rem 0.81rem 1.5rem 0rem rgba(70, 86, 106, 0.2);
    background: rgb(43, 53, 65);
 }
-
  .hero-bg {
     height: clamp(493px, 50vw, 852px);
     flex-basis: calc(40% - 20px);
@@ -141,20 +182,9 @@ nav a {
     position: absolute;
     right: -10vw;
     bottom: 0;
-    width: clamp(399px, 50vw, 996px);
-    height: 100%;
+    width: clamp(399px, 55vw, 996px);
  }
- 
- @media (max-width: 1500px) {
-    .hero img {
-       right: -2vw;
-    }
- }
- @media (max-width: 1220px) {
-    .hero img {
-       right: 5px;
-    } 
- }
+
  .scroll-arrow {
     position: absolute;
     bottom: 0px;
@@ -165,6 +195,39 @@ nav a {
 .scroll-arrow img {
     width: 52px;
     height: 55px;
+}
+@media (max-width: 1300px) {
+   .hero img {
+      right: -5vw;
+
+   }
+}
+@media (max-width: 768px) {
+   .hero-subtext {
+      margin-left: 0;
+   } 
+   .hero {
+      align-items: flex-start;
+   }
+   .hero-text h1 {
+      margin-top: 31px;
+   }
+}
+@media (max-width: 645px) {
+   .hero {
+      display: block;
+   }
+   .hero-bg, .hero img, .scroll-arrow {
+        display: none;
+    }
+    .hero-subtext {
+      width: 100%;
+    }
+}
+@media (max-width: 430px) {
+   .hero-button {
+      width: 100%;
+   }
 }
 
 /*Schedule my*/
@@ -202,7 +265,7 @@ nav a {
     grid-template-rows: 309px 73px 281px;
     grid-template-areas: "a b c" "d b f" "d e f";
     gap: 20px;
-    margin-bottom: 162px;
+    margin-bottom: clamp(4.75rem, 2.466rem + 10.75vw, 10.125rem);
  }
  .item {
     border: 1px solid var(--dark);
@@ -308,7 +371,7 @@ nav a {
 .form-section {
    background-color: #F3F3F3;
    padding: 80px 0 80px 0;
-   margin-bottom: 158px;
+   margin-bottom: clamp(4.75rem, 2.572rem + 10.25vw, 9.875rem);
 }
 .form {
    max-width: 620px;
@@ -344,9 +407,11 @@ nav a {
 }
 input[type="email"] {
    width: 372px;
-   height: 64px;
+   height: 65px;
    border: 1px solid white; /* Стандартная граница */
    transition: border-color 0.3s ease;
+   padding: 0;
+   border: none;
 }
 
 input[type="email"]:focus {
@@ -371,6 +436,7 @@ input[type="email"]:invalid {
    cursor: pointer;
    box-shadow: 0 4px 10px rgba(251, 241, 56, 0.4);
    transition: .3s;
+   padding: 0;
 }
 .form button:hover {
    color: var(--accent);
@@ -669,7 +735,7 @@ input[type="email"] {
 .about-section {
    display: flex;
    gap: 77px;
-   margin-bottom: 80px;
+   margin-bottom: clamp(3.563rem, 2.952rem + 2.88vw, 5rem);
 }
 .about-text {
    flex-basis: 45%;
@@ -692,7 +758,10 @@ input[type="email"] {
 }
 .about-image img {
    width: 100%;
-}
+      height: 100%;
+      object-fit: cover;
+    }
+
 .about-text .signup-button {
    height: 65px;
    width: 225px;
@@ -714,6 +783,7 @@ input[type="email"] {
    background: rgb(43, 53, 65);
 }
 .features {
+   width: clamp(13.938rem, -10.42rem + 114.63vw, 71.25rem);
    display: grid;
    grid-template-columns: repeat(4, auto);
    grid-template-rows: auto;
@@ -734,32 +804,60 @@ input[type="email"] {
 
 @media (max-width: 768px) {
    .about-image img {
+      width: 100%;
+      max-width: 382px;
+      height: 358px;
+      overflow: hidden;
    }
    .features {
       grid-template-columns: repeat(2, auto);
       grid-template-rows: auto;
-      gap: 43px 0;
+      gap: 43px 148px;
    }
 }
+@media (max-width: 656px) {
+   .about-section {
+      display: block;
+   }
+   .about-image {
+      display: none;
+   }
+}
+
 @media (max-width: 430px) {
    .features {
       grid-template-columns: repeat(1, auto);
       grid-template-rows: auto;
       gap: 40px 0
 }
+.about-text .signup-button {
+   width: 100%;
+}
+}
 
 /*Footer*/
 .footer {
    background-color: #f0f0f0;
-   padding: 30px 0;
+   padding: 53px 0 26px 0;
    color: var(--dark);
+   margin-top: clamp(4.25rem, 1.541rem + 12.75vw, 10.625rem);
 }
 .footer-top {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   width: 100%;
 }
 .footer-bottom {
+   margin-top: 28px;
    display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+@media (max-width: 768px) {
+   .footer-top nav,
+    .footer-top .contact,
+    .footer-bottom p:last-child {
+        display: none;
+
+}
 }
