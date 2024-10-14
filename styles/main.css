@@ -24,8 +24,8 @@ body {
 /*Header*/
 header {
     background-color: white;
-    padding-top: 52px;
-    padding-bottom: 28px;
+    padding-top: clamp(2rem, 1.522rem + 2.25vw, 3.125rem);
+    padding-bottom: 30px;
 }
 .header-content {
     display: flex; 
@@ -109,6 +109,61 @@ nav a:hover::after {
    .logo img {
       width: 78px;
    }
+}
+
+/*Burger menu*/
+.nav-overlay {
+   position: fixed;
+   top: 0;
+   width: 95%;
+   background-color: #F3F3F3;
+   display: none;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 32px 10px 38px 10px;
+   z-index: 1000;
+}
+
+.nav-overlay.active {
+   display: flex;
+}
+
+.close-btn {
+   background: none;
+   border: none;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   cursor: pointer;
+}
+.close-btn img {
+   width: 20px; 
+   height: 20px;
+}
+
+.nav-overlay ul {
+   list-style: none;
+   padding: 10px 0 0 0;
+   margin: 0;
+   width: 100%;
+}
+
+.nav-overlay li {
+   width: 100%;
+   border-bottom: 1px solid #ccc;
+}
+
+.nav-overlay a {
+   text-decoration: none;
+   color: #2B3541;
+   display: block;
+   padding: 20px 0;
+   font-size: 18px;
+}
+
+/* Скрываем основной логотип при открытии меню, если нужно */
+.nav-overlay.active + .logo {
+   display: none;
 }
 
 

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/script.js"></script>
 </head>
 
 <!--Header-->
@@ -36,6 +37,22 @@
         </div>
     </div>
 </header>
+    <!--Burger menu-->
+<div class="container">
+<div class="nav-overlay" id="nav-overlay">
+    <button class="close-btn" onclick="toggleMenu()">
+        <img src="images/close.svg" alt="Закрыть меню">
+    </button>
+    <div class="menu-logo">
+        <img src="images/logo.svg" alt="Логотип в меню">
+    </div>
+    <ul>
+        <li><a href="#">Мероприятия</a></li>
+        <li><a href="#">Расписание</a></li>
+        <li><a href="#">О компании</a></li>
+    </ul>
+</div>
+</div>
 
 <!--Hero-->
 <div class="container">
@@ -48,7 +65,7 @@
        </div>
        <div class="hero-bg"></div>
        <img src="images/girl-sport.png" alt="Спортсменка">
-       <div class="scroll-arrow">
+       <div class="scroll-arrow" onclick="scrollToSchedule()">
         <img class="scroll-arrow" src="images/arrow.svg" alt="Прокрутите вниз">
     </div> 
     </div>
@@ -56,7 +73,7 @@
 
 <!--Schedule-->
 <div class="container">
-    <div class="schedule-title">
+    <div id="schedule" class="schedule-title">
     <h2>Расписание тренировок</h2>
     <p>22 - 28 июня</p>
     </div>
