@@ -115,8 +115,9 @@ nav a:hover::after {
 .nav-overlay {
    display: none;
    position: fixed;
+   right: 0;
+   left: 0;
    top: 0;
-   width: 95%;
    background-color: #F3F3F3;
    display: none;
    flex-direction: column;
