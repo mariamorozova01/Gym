@@ -113,6 +113,7 @@ nav a:hover::after {
 
 /*Burger menu*/
 .nav-overlay {
+   display: none;
    position: fixed;
    top: 0;
    width: 95%;
@@ -160,12 +161,6 @@ nav a:hover::after {
    padding: 20px 0;
    font-size: 18px;
 }
-
-/* Скрываем основной логотип при открытии меню, если нужно */
-.nav-overlay.active + .logo {
-   display: none;
-}
-
 
 /*Hero Banner*/
 .hero {
