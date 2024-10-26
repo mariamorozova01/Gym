@@ -179,6 +179,7 @@ nav a:hover::after {
     color: var(--dark);
     line-height: 125%;
     margin: 0 0 40px 0;
+    flex-basis: 10%;
     text-transform: uppercase;
  }
  .trainings {
@@ -250,7 +251,16 @@ nav a:hover::after {
 @media (max-width: 1300px) {
    .hero img {
       right: -5vw;
-
+   }
+}
+@media (max-width: 1100px) {
+   .hero-text h1 {
+      max-width: 80% ;
+   }
+}
+@media (max-width: 428px) {
+   .hero-text h1 {
+      max-width: 100% ;
    }
 }
 @media (max-width: 768px) {
@@ -365,7 +375,7 @@ nav a:hover::after {
       font-size: 16px;
    }
 }
-@media (max-width: 360px) {
+@media (max-width: 450px) {
    .item .date {
       font-size: 14px;
    }
@@ -409,7 +419,7 @@ nav a:hover::after {
        gap: 10px;
     }
  }
- @media (max-width: 360px) {
+ @media (max-width: 450px) {
    .grid {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(6, 114px);
@@ -461,7 +471,7 @@ input[type="email"] {
    height: 65px;
    border: 1px solid white; /* Стандартная граница */
    transition: border-color 0.3s ease;
-   padding: 0;
+   padding: 0 0 0 10px;
    border: none;
 }
 
