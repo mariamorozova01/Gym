@@ -206,8 +206,9 @@ nav a:hover::after {
 .hero-button {
     background: var(--accent);
     border: none;
-    height: 65px;
-    width: 252px;
+    padding: 20px 30px;
+    width: auto;
+    height: auto;
     color: var(--dark);
     font-weight: 700;
     text-transform: uppercase;
@@ -467,11 +468,12 @@ nav a:hover::after {
    flex-basis: calc(100% - 225px - 20px);
 }
 input[type="email"] {
+   display: block;
    width: 372px;
    height: 65px;
    border: 1px solid white; /* Стандартная граница */
    transition: border-color 0.3s ease;
-   padding: 0 0 0 10px;
+   padding: 0 0 0 15px;
    border: none;
 }
 
